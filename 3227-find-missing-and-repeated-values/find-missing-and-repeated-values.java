@@ -6,21 +6,14 @@ class Solution {
         int n = grid.length;
         int actualSum = 0;
 
-        
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                int val = grid[i][j];
-                
-                // If add() returns false → duplicate
-                if (!set.add(val)) {
-                    a = val;  // store duplicate in a
-                }
-
-             
-                actualSum += val;
+      for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            actualSum+=grid[i][j];
+            if(!set.add(grid[i][j])){
+                a=grid[i][j];
             }
         }
-
+      }
         // Expected sum of 1 to n^2
         int expSum = n * n * (n * n + 1) / 2;
 
