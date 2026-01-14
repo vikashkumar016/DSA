@@ -1,0 +1,146 @@
+name: LeetCode Sync
+
+on:
+  # Run on push to main branch
+  push:
+    branches:
+      - main
+    paths:
+      - 'LeetCode/**'
+  
+  # Allow manual trigger
+  workflow_dispatch:
+  
+  # Run on schedule (optional - updates README stats daily)
+  # schedule:
+  #   - cron: '0 0 * * *'  # Daily at midnight
+
+jobs:
+  sync-readme:
+    name: Update LeetCode Statistics
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Count LeetCode problems
+        id: count
+        run: |
+          # Count problems by difficulty
+          easy_count=$(find LeetCode/Easy -mindepth 1 -maxdepth 1 -type d 2>/dev/null | wc -l)
+          medium_count=$(find LeetCode/Medium -mindepth 1 -maxdepth 1 -type d 2>/dev/null | wc -l)
+          hard_count=$(find LeetCode/Hard -mindepth 1 -maxdepth 1 -type d 2>/dev/null | wc -l)
+          total=$((easy_count + medium_count + hard_count))
+          
+          echo "easy=$easy_count" >> $GITHUB_OUTPUT
+          echo "medium=$medium_count" >> $GITHUB_OUTPUT
+          echo "hard=$hard_count" >> $GITHUB_OUTPUT
+          echo "total=$total" >> $GITHUB_OUTPUT
+          
+          echo "Found $total LeetCode problems:"
+          echo "  Easy: $easy_count"
+          echo "  Medium: $medium_count"
+          echo "  Hard: $hard_count"
+      
+      - name: Generate problem list
+        id: list
+        run: |
+          # Generate a table of all problems
+          echo "# LeetCode Problems" > leetcode_list.md
+          echo "" >> leetcode_list.md
+          
+          for difficulty in Easy Medium Hard; do
+            echo "## $difficulty" >> leetcode_list.md
+            echo "" >> leetcode_list.md
+            
+            if [ -d "LeetCode/$difficulty" ]; then
+              # Find all problem directories
+              find "LeetCode/$difficulty" -mindepth 1 -maxdepth 1 -type d | sort | while read dir; do
+                folder_name=$(basename "$dir")
+                # Extract problem number and title from folder name
+                problem_num=$(echo "$folder_name" | grep -oE '^[0-9]+')
+                problem_title=$(echo "$folder_name" | sed 's/^[0-9]*-//' | sed 's/-/ /g' | sed 's/\b\(.\)/\u\1/g')
+                
+                # Check if README exists
+                if [ -f "$dir/README.md" ]; then
+                  echo "- [$problem_num. $problem_title]($dir/README.md)" >> leetcode_list.md
+                else
+                  echo "- $problem_num. $problem_title" >> leetcode_list.md
+                fi
+              done
+            fi
+            
+            echo "" >> leetcode_list.md
+          done
+          
+          # Output the list for potential use
+          cat leetcode_list.md
+      
+      - name: Display statistics
+        run: |
+          echo "### LeetCode Progress Statistics"
+          echo "- **Total Problems Solved:** ${{ steps.count.outputs.total }}"
+          echo "- **Easy:** ${{ steps.count.outputs.easy }}"
+          echo "- **Medium:** ${{ steps.count.outputs.medium }}"
+          echo "- **Hard:** ${{ steps.count.outputs.hard }}"
+      
+      # Optional: Commit changes if README was updated
+      # - name: Commit changes
+      #   run: |
+      #     git config --local user.email "github-actions[bot]@users.noreply.github.com"
+      #     git config --local user.name "github-actions[bot]"
+      #     git add .
+      #     git diff --staged --quiet || git commit -m "Update LeetCode statistics [skip ci]"
+      #     git push
+
+  validate-structure:
+    name: Validate LeetCode Structure
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Validate folder structure
+        run: |
+          echo "Validating LeetCode folder structure..."
+          
+          # Check that LeetCode directory exists
+          if [ ! -d "LeetCode" ]; then
+            echo "Error: LeetCode directory not found"
+            exit 1
+          fi
+          
+          # Check difficulty folders
+          for difficulty in Easy Medium Hard; do
+            if [ ! -d "LeetCode/$difficulty" ]; then
+              echo "Warning: LeetCode/$difficulty directory not found"
+            fi
+          done
+          
+          # Validate each problem folder has required files
+          for problem_dir in LeetCode/*/*/*; do
+            if [ -d "$problem_dir" ]; then
+              folder_name=$(basename "$problem_dir")
+              
+              # Check for solution file
+              if ! ls "$problem_dir"/solution.* 1> /dev/null 2>&1; then
+                echo "Warning: No solution file found in $problem_dir"
+              fi
+              
+              # Check for README
+              if [ ! -f "$problem_dir/README.md" ]; then
+                echo "Warning: No README.md found in $problem_dir"
+              fi
+            fi
+          done
+          
+          echo "Validation complete!"
