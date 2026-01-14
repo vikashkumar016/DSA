@@ -127,7 +127,7 @@ jobs:
           done
           
           # Validate each problem folder has required files
-          for problem_dir in LeetCode/*/*/*; do
+          for problem_dir in LeetCode/*/*/; do
             if [ -d "$problem_dir" ]; then
               folder_name=$(basename "$problem_dir")
               

@@ -3,8 +3,36 @@
 # LeetCode Solution Addition Script
 # This script helps to quickly add a new LeetCode solution to the repository
 # Usage: ./add-leetcode-solution.sh [options]
+#
+# Note: This script uses sed -i which behaves differently on macOS vs Linux.
+# On macOS, if you encounter issues, you may need to install GNU sed:
+#   brew install gnu-sed
+# Or the script will attempt to detect the OS and adjust accordingly.
 
 set -e  # Exit on error
+
+# Detect OS for sed compatibility
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    IS_MACOS=true
+else
+    IS_MACOS=false
+fi
+
+# Helper function for safe sed replacement
+safe_sed_replace() {
+    local file="$1"
+    local pattern="$2"
+    local replacement="$3"
+    
+    # Escape special characters in replacement string
+    replacement=$(printf '%s\n' "$replacement" | sed 's/[&/\]/\\&/g')
+    
+    if [[ "$IS_MACOS" == true ]]; then
+        sed -i '' "s/$pattern/$replacement/g" "$file"
+    else
+        sed -i "s/$pattern/$replacement/g" "$file"
+    fi
+}
 
 # Colors for output
 RED='\033[0;31m'
@@ -166,12 +194,12 @@ TEMPLATE_FILE="$TEMPLATE_DIR/solution-template.$FILE_EXT"
 if [[ -f "$TEMPLATE_FILE" ]]; then
     cp "$TEMPLATE_FILE" "$SOLUTION_FILE"
     
-    # Replace placeholders
-    sed -i "s/{PROBLEM_NUMBER}/$PROBLEM_NUMBER/g" "$SOLUTION_FILE"
-    sed -i "s/{PROBLEM_TITLE}/$PROBLEM_TITLE/g" "$SOLUTION_FILE"
-    sed -i "s/{DIFFICULTY}/$DIFFICULTY/g" "$SOLUTION_FILE"
-    sed -i "s/{PROBLEM_SLUG}/$PROBLEM_SLUG/g" "$SOLUTION_FILE"
-    sed -i "s/{TAGS}/$TAGS/g" "$SOLUTION_FILE"
+    # Replace placeholders using safe function
+    safe_sed_replace "$SOLUTION_FILE" "{PROBLEM_NUMBER}" "$PROBLEM_NUMBER"
+    safe_sed_replace "$SOLUTION_FILE" "{PROBLEM_TITLE}" "$PROBLEM_TITLE"
+    safe_sed_replace "$SOLUTION_FILE" "{DIFFICULTY}" "$DIFFICULTY"
+    safe_sed_replace "$SOLUTION_FILE" "{PROBLEM_SLUG}" "$PROBLEM_SLUG"
+    safe_sed_replace "$SOLUTION_FILE" "{TAGS}" "$TAGS"
     
     echo -e "${GREEN}✓${NC} Created solution file: $SOLUTION_FILE"
 else
@@ -187,33 +215,33 @@ README_TEMPLATE="$TEMPLATE_DIR/problem-readme-template.md"
 if [[ -f "$README_TEMPLATE" ]]; then
     cp "$README_TEMPLATE" "$README_FILE"
     
-    # Replace placeholders with safe values for sed
-    sed -i "s/{PROBLEM_NUMBER}/$PROBLEM_NUMBER/g" "$README_FILE"
-    sed -i "s/{PROBLEM_TITLE}/$PROBLEM_TITLE/g" "$README_FILE"
-    sed -i "s/{DIFFICULTY}/$DIFFICULTY/g" "$README_FILE"
-    sed -i "s/{PROBLEM_SLUG}/$PROBLEM_SLUG/g" "$README_FILE"
-    sed -i "s/{TAGS}/$TAGS/g" "$README_FILE"
+    # Replace placeholders with safe values
+    safe_sed_replace "$README_FILE" "{PROBLEM_NUMBER}" "$PROBLEM_NUMBER"
+    safe_sed_replace "$README_FILE" "{PROBLEM_TITLE}" "$PROBLEM_TITLE"
+    safe_sed_replace "$README_FILE" "{DIFFICULTY}" "$DIFFICULTY"
+    safe_sed_replace "$README_FILE" "{PROBLEM_SLUG}" "$PROBLEM_SLUG"
+    safe_sed_replace "$README_FILE" "{TAGS}" "$TAGS"
     
     # Replace other placeholders with TODO markers
-    sed -i "s/{PROBLEM_DESCRIPTION}/TODO: Add problem description from LeetCode/g" "$README_FILE"
-    sed -i "s/{APPROACH_DESCRIPTION}/TODO: Describe your approach/g" "$README_FILE"
-    sed -i "s/{STEP_1}/TODO: Add step 1/g" "$README_FILE"
-    sed -i "s/{STEP_2}/TODO: Add step 2/g" "$README_FILE"
-    sed -i "s/{STEP_3}/TODO: Add step 3/g" "$README_FILE"
-    sed -i "s/{TIME_COMPLEXITY_EXPLANATION}/TODO: Explain time complexity/g" "$README_FILE"
-    sed -i "s/{SPACE_COMPLEXITY_EXPLANATION}/TODO: Explain space complexity/g" "$README_FILE"
-    sed -i "s/{SOLUTION_1_NAME}/Main Solution/g" "$README_FILE"
-    sed -i "s/{LANGUAGE}/$LANGUAGE/g" "$README_FILE"
-    sed -i "s/{ext}/$FILE_EXT/g" "$README_FILE"
-    sed -i "s/{SOLUTION_1_EXPLANATION}/TODO: Add explanation/g" "$README_FILE"
-    sed -i "s/{INPUT_1}/TODO/g" "$README_FILE"
-    sed -i "s/{OUTPUT_1}/TODO/g" "$README_FILE"
-    sed -i "s/{EXPECTED_1}/TODO/g" "$README_FILE"
-    sed -i "s/{INPUT_2}/TODO/g" "$README_FILE"
-    sed -i "s/{OUTPUT_2}/TODO/g" "$README_FILE"
-    sed -i "s/{EXPECTED_2}/TODO/g" "$README_FILE"
-    sed -i "s/{NOTE_1}/TODO: Add notes/g" "$README_FILE"
-    sed -i "s/{NOTE_2}/TODO: Add more notes/g" "$README_FILE"
+    safe_sed_replace "$README_FILE" "{PROBLEM_DESCRIPTION}" "TODO: Add problem description from LeetCode"
+    safe_sed_replace "$README_FILE" "{APPROACH_DESCRIPTION}" "TODO: Describe your approach"
+    safe_sed_replace "$README_FILE" "{STEP_1}" "TODO: Add step 1"
+    safe_sed_replace "$README_FILE" "{STEP_2}" "TODO: Add step 2"
+    safe_sed_replace "$README_FILE" "{STEP_3}" "TODO: Add step 3"
+    safe_sed_replace "$README_FILE" "{TIME_COMPLEXITY_EXPLANATION}" "TODO: Explain time complexity"
+    safe_sed_replace "$README_FILE" "{SPACE_COMPLEXITY_EXPLANATION}" "TODO: Explain space complexity"
+    safe_sed_replace "$README_FILE" "{SOLUTION_1_NAME}" "Main Solution"
+    safe_sed_replace "$README_FILE" "{LANGUAGE}" "$LANGUAGE"
+    safe_sed_replace "$README_FILE" "{ext}" "$FILE_EXT"
+    safe_sed_replace "$README_FILE" "{SOLUTION_1_EXPLANATION}" "TODO: Add explanation"
+    safe_sed_replace "$README_FILE" "{INPUT_1}" "TODO"
+    safe_sed_replace "$README_FILE" "{OUTPUT_1}" "TODO"
+    safe_sed_replace "$README_FILE" "{EXPECTED_1}" "TODO"
+    safe_sed_replace "$README_FILE" "{INPUT_2}" "TODO"
+    safe_sed_replace "$README_FILE" "{OUTPUT_2}" "TODO"
+    safe_sed_replace "$README_FILE" "{EXPECTED_2}" "TODO"
+    safe_sed_replace "$README_FILE" "{NOTE_1}" "TODO: Add notes"
+    safe_sed_replace "$README_FILE" "{NOTE_2}" "TODO: Add more notes"
     
     echo -e "${GREEN}✓${NC} Created README file: $README_FILE"
 else
