@@ -1,0 +1,59 @@
+# Operating System
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+
+# Compiled files
+*.class
+*.pyc
+*.pyo
+__pycache__/
+*.so
+*.exe
+*.out
+*.o
+a.out
+
+# Logs
+*.log
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.bak
+
+# Build artifacts (if any)
+build/
+dist/
+target/
+*.egg-info/
+
+# Node modules (if using JavaScript)
+node_modules/
+
+# Test coverage
+.coverage
+htmlcov/
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# Generated problem lists
+leetcode_list.md
