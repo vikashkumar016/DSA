@@ -6,7 +6,7 @@
 
 [![GitHub followers](https://img.shields.io/github/followers/vikashkumar016?style=social)](https://github.com/vikashkumar016)
 [![GitHub stars](https://img.shields.io/github/stars/vikashkumar016?style=social)](https://github.com/vikashkumar016)
-[![LeetCode](https://img.shields.io/badge/LeetCode-200%2B%20Solved-orange?style=flat&logo=leetcode)](https://leetcode.com)
+[![LeetCode](https://img.shields.io/badge/LeetCode-200%2B%20Solved-orange?style=flat&logo=leetcode)](https://leetcode.com/vikashkumar016)
 [![Profile Views](https://komarev.com/ghpvc/?username=vikashkumar016&color=blue)](https://github.com/vikashkumar016)
 
 </div>
@@ -492,7 +492,7 @@ This repository is maintained by [@vikashkumar016](https://github.com/vikashkuma
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/vikashkumar016)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/vikashkumar016)
 [![LeetCode](https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black)](https://leetcode.com/vikashkumar016)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:vikashkumar016@example.com)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:contact@vikashkumar.dev)
 [![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/vikashkumar016)
 
 </div>
