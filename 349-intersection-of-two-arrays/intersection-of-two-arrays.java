@@ -19,23 +19,54 @@ class Solution {
         //     }
         // }
         // return list;
-        Set<Integer> set1 = new HashSet<>();
-        Set<Integer> resultSet = new HashSet<>();
+        // Set<Integer> set1 = new HashSet<>();
+        // Set<Integer> resultSet = new HashSet<>();
         
-        for (int n : nums1) {
-            set1.add(n);
-        }
+        // for (int n : nums1) {
+        //     set1.add(n);
+        // }
         
-        for (int n : nums2) {
-            if (set1.contains(n)) {
-                resultSet.add(n);
+        // for (int n : nums2) {
+        //     if (set1.contains(n)) {
+        //         resultSet.add(n);
+        //     }
+        // }
+        
+        // int[] result = new int[resultSet.size()];
+        // int i = 0;
+        // for (int n : resultSet) {
+        //     result[i++] = n;
+        // }
+        
+        // return result;
+         Arrays.sort(nums1);
+        Arrays.sort(nums2);
+        
+        int i = 0;
+        int j = 0;
+        
+        Set<Integer> set = new HashSet<>();
+        
+        while (i < nums1.length && j < nums2.length) {
+            
+            if (nums1[i] < nums2[j]) {
+                i++;
+            } 
+            else if (nums1[i] > nums2[j]) {
+                j++;
+            } 
+            else {
+                set.add(nums1[i]);   // HashSet avoids duplicates
+                i++;
+                j++;
             }
         }
         
-        int[] result = new int[resultSet.size()];
-        int i = 0;
-        for (int n : resultSet) {
-            result[i++] = n;
+        // Convert Set to array
+        int[] result = new int[set.size()];
+        int idx = 0;
+        for (int num : set) {
+            result[idx++] = num;
         }
         
         return result;
