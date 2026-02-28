@@ -28,7 +28,7 @@ class Solution {
         Arrays.sort(nums); // helps avoid duplicate triplets
         
         for (int i = 0; i < n - 2; i++) {
-            Set<Integer> seen = new HashSet<>();
+            Set<Integer> seen = new HashSet<>(); 
             
             for (int j = i + 1; j < n; j++) {
                 int complement = -nums[i] - nums[j];
