@@ -3,7 +3,7 @@ class Solution {
         int pivot = -1;
         int n = nums.length;
 
-        // Step 1: find pivot
+      
         for (int i = n - 2; i >= 0; i--) {
             if (nums[i] < nums[i + 1]) {
                 pivot = i;
@@ -11,7 +11,6 @@ class Solution {
             }
         }
 
-        // Step 2: if pivot exists, swap with next greater element
         if (pivot != -1) {
             for (int i = n - 1; i > pivot; i--) {
                 if (nums[i] > nums[pivot]) {
