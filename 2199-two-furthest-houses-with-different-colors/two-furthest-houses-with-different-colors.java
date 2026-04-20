@@ -2,18 +2,13 @@ class Solution {
     public int maxDistance(int[] colors) {
         int maxDist=0;
         int n=colors.length;
-       for (int i = n - 1; i >= 0; i--) {
-            if (colors[i] != colors[0]) {
-                maxDist = Math.max(maxDist, i); // i - 0 is just i
-                break; // Found the furthest possible for the first house
-            }
-        }   
-        for (int i = 0; i < n; i++) {
-            if (colors[i] != colors[n - 1]) {
-                maxDist = Math.max(maxDist, (n - 1) - i);
-                break; // Found the furthest possible for the last house
+     for (int i = 0; i < colors.length; i++) {
+        for (int j = i + 1; j < colors.length; j++) {
+            if (colors[i] != colors[j]) {
+                maxDist = Math.max(maxDist, j - i);
             }
         }
-        return maxDist;    
+    }
+    return maxDist;
     }
 }
