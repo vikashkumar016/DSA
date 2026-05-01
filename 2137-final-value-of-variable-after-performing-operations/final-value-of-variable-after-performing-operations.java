@@ -1,15 +1,25 @@
 class Solution {
     public int finalValueAfterOperations(String[] operations) {
-          int X = 0;
-        
-        for (String operation : operations) {
-            if (operation.equals("++X") || operation.equals("X++")) {
-                X++;
-            } else if (operation.equals("--X") || operation.equals("X--")) {
-                X--;
+          int x=0;
+        for(int i =0;i<operations.length;i++){
+
+            String op = operations[i];
+            switch(op){
+                case "X++":
+                    x++;
+                    break;
+                case "X--":
+                    x--;
+                    break;
+                case "++X":
+                    ++x;
+                    break;
+                case "--X":
+                    --x;
+                    break;            
+                    
             }
         }
-        
-        return X;
+        return x;
     }
 }
