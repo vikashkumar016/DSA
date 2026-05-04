@@ -1,21 +1,16 @@
 class Solution {
     public char findTheDifference(String s, String t) {
-      HashMap<Character, Integer> map = new HashMap<>();
+      int[] count = new int[26];
 
-      
         for (char c : s.toCharArray()) {
-            map.put(c, map.getOrDefault(c, 0) + 1);
+            count[c - 'a']++;
         }
 
- 
         for (char c : t.toCharArray()) {
-            if (!map.containsKey(c) || map.get(c) == 0) {
-                return c;
-            } else {
-                map.put(c, map.get(c) - 1);
-            }
+            if (count[c - 'a'] == 0) return c;
+            count[c - 'a']--;
         }
 
-        return ' '; 
+        return ' ';
     }
     }
