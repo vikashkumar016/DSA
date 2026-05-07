@@ -1,14 +1,27 @@
 class Solution {
     public String replaceDigits(String s) {
-     char[] arr = s.toCharArray();
+      String ans = "";
 
-        for (int i = 1; i < arr.length; i += 2) {
+        for (int i = 0; i < s.length(); i++) {
 
-            int shift = arr[i] - '0';
+            // even index -> letter
+            if (i % 2 == 0) {
+                ans += s.charAt(i);
+            }
 
-            arr[i] = (char)(arr[i - 1] + shift);
+            // odd index -> digit
+            else {
+
+                char prev = s.charAt(i - 1);
+
+                int shift = s.charAt(i) - '0';
+
+                char newChar = (char)(prev + shift);
+
+                ans += newChar;
+            }
         }
 
-        return new String(arr);
+        return ans;
     }
 }
