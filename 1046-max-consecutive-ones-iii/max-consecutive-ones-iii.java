@@ -1,31 +1,29 @@
 class Solution {
     public int longestOnes(int[] nums, int k) {
-     int ans=0;
-     int i=0;
-     int j=-1; //j+1 to i-1 window
-     int coziw=0;
-     while(i<nums.length){
-        //acquire
-       if(nums[i]==0){
-     coziw++;
-     i++;
-       }
-       else {
-        i++;
-       }
-        //if invalid releawsed until you are valid again
-       while(coziw>k){
-        j++;
-        if(nums[j]==0){
-            coziw--;
-        }
-        else {
 
+        int ans = 0;
+
+        for (int i = 0; i < nums.length; i++) {
+
+            int zeroCount = 0;
+
+            for (int j = i; j < nums.length; j++) {
+
+                if (nums[j] == 0) {
+                    zeroCount++;
+                }
+
+                // valid subarray
+                if (zeroCount <= k) {
+                    ans = Math.max(ans, j - i + 1);
+                } 
+                // no need to continue further
+                else {
+                    break;
+                }
+            }
         }
-       }
-       int sow=i-1-j;
-       ans = Math.max(ans,sow);
-     }
-         return ans;
+
+        return ans;
     }
 }
