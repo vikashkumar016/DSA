@@ -1,6 +1,11 @@
 class Solution {
     public boolean closeStrings(String word1, String word2) {
+       int len1 = word1.length();
+        int len2 = word2.length();
 
+        if (len1 != len2){
+            return false;
+        }
         HashMap<Character,Integer>map1= new HashMap<>();
         HashMap<Character,Integer>map2= new HashMap<>();
         for(int i=0;i<word1.length();i++){
