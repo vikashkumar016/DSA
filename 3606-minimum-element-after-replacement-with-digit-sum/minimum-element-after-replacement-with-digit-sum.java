@@ -1,16 +1,19 @@
 class Solution {
     public int minElement(int[] nums) {
-     ArrayList<Integer>list= new ArrayList<>();
+    int minSum = Integer.MAX_VALUE;
 
-      for(int i:nums){
-        int num=i;
-        int sum=0;
-         while(num>0){
-            sum+=num%10;
-            num/=10;
-         }
-         list.add(sum);
-     }   
-    return  Collections.min(list);
+        for (int num : nums) {
+            int sum = 0;
+            int temp = num;
+
+            while (temp > 0) {
+                sum += temp % 10;
+                temp /= 10;
+            }
+
+            minSum = Math.min(minSum, sum);
+        }
+
+        return minSum;
     }
 }
