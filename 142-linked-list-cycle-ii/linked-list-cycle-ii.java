@@ -26,10 +26,10 @@ public class Solution {
                     entry = entry.next;
                     slow = slow.next;
                 }
-                return entry; // Start of the cycle
+                return entry;
             }
         }
 
-        return null; // No cycle
-    }
+        return null; 
+}
 }
