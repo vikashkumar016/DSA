@@ -3,15 +3,14 @@ class Solution {
         if(nums.length==0){
             return 0;
         }
-        int count=1;
-        int temp=nums[0];
-        for(int i=1;i<nums.length;i++){
-            if(nums[i]!=temp){
-                nums[count]=nums[i];
-                temp =nums[i];
-                count++;
-            }
+      int i=0;
+      for(int j=1;j<nums.length;j++){
+        if(nums[j]!=nums[i]){
+                i++;
+                nums[i]=nums[j];
+
         }
-        return count;
+      }
+      return i+1;
     }
 }
