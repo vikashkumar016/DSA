@@ -2,6 +2,8 @@
 
 Welcome to my DSA repository! This repository contains a comprehensive collection of data structures and algorithm problems, solutions, and notes. It's meant for practice, learning, and interview preparation.
 
+> 🎨 **New!** Check out the [Frontend Projects Guide](./FRONTEND_PROJECTS_GUIDE.md) - A comprehensive guide to the best projects for frontend developers, perfectly complementing your DSA practice!
+
 ---
 
 ## 📂 Repository Structure
@@ -24,6 +26,7 @@ DSA/
 ├── .github/
 │   └── workflows/
 │       └── leetcode-sync.yml   # GitHub Actions workflow
+├── FRONTEND_PROJECTS_GUIDE.md  # 🆕 Best projects for frontend developers
 └── README.md                    # This file
 ```
 
@@ -246,6 +249,43 @@ The `scripts/` directory contains:
 ### Study Guides
 - [Blind 75](https://www.teamblind.com/post/New-Year-Gift---Curated-List-of-Top-75-LeetCode-Questions-to-Save-Your-Time-OaM1orEU) - Essential interview questions
 - [Grind 75](https://www.techinterviewhandbook.org/grind75) - Structured study plan
+
+---
+
+## 🎨 Frontend Developer Projects
+
+Looking to build practical projects alongside your DSA practice? Check out our comprehensive **[Frontend Projects Guide](./FRONTEND_PROJECTS_GUIDE.md)**!
+
+### Why Build Frontend Projects?
+
+While mastering DSA is crucial for technical interviews, building real-world projects demonstrates:
+- **Practical application** of algorithms and data structures
+- **Problem-solving skills** in real scenarios
+- **Full development cycle** experience
+- **Portfolio pieces** for job applications
+
+### What's Inside the Guide?
+
+✨ **17+ Project Ideas** organized by difficulty:
+- 🌱 Beginner: Portfolio, Todo App, Weather App, Calculator, Quiz App
+- 🚀 Intermediate: E-commerce, Movie Database, Kanban Board, Chat App
+- 💎 Advanced: Code Editor, Video Platform, Google Maps Clone, Collaborative Tools
+
+📚 **For Each Project:**
+- Required technologies and tech stack
+- Key features to implement
+- Skills you'll learn
+- DSA concepts applied
+- Timeline estimates
+
+🛠️ **Additional Resources:**
+- Best practices and coding standards
+- Recommended tech stack
+- Deployment strategies
+- Learning path recommendations
+- Project planning templates
+
+**[👉 View the Complete Guide](./FRONTEND_PROJECTS_GUIDE.md)**
 
 ---
 
