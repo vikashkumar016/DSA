@@ -22,7 +22,7 @@ class Solution {
         TreeNode right=invertTree(root.right);
         root.left=right;
         root.right=left;
-        return root;
-
+        
+      return root;
     }
 }
