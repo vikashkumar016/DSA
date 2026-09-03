@@ -24,7 +24,7 @@ class Solution {
         int leftHt = height(root.left);
         int rightHt = height(root.right);
 
-        int selfDiam = leftHt + rightHt; // ✅ No +1 here
+        int selfDiam = leftHt + rightHt; 
 
         return Math.max(selfDiam, Math.max(leftDiam, rightDiam));
     }
