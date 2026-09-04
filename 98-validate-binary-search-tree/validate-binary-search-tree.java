@@ -23,7 +23,6 @@ class Solution {
             return true;
         }
         
-        // Check the value of the current node with respect to min and max bounds
         if (min != null && root.val <= min.val) {
             return false;
         }
@@ -31,7 +30,6 @@ class Solution {
             return false;
         }
         
-        // Recursively check the left and right subtree
         return isValidBst(root.left, min, root) && isValidBst(root.right, root, max);
     }
 }
