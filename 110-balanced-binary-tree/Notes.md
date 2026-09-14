@@ -1,1 +1,1 @@
-<h2>balanced-binary-tree Notes</h2><hr>[ Time taken: 8hrs 22m 6s ]
+<h2>balanced-binary-tree Notes</h2><hr>[ Time taken: 9hrs 13m 24s ]
