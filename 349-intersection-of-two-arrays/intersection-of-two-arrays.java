@@ -1,76 +1,22 @@
 class Solution {
     public int[] intersection(int[] nums1, int[] nums2) {
-         
-        //   int j=0;
-        // int i=0;
-        // int idx=0;
-        // while(i<nums1.length && j<nums2.length){
-        //     if(nums1[i]<nums2[j]){
-        //         i++;
-        //     }
-        //     else if(nums1[i]>nums2[j]){
-        //         j++;
-        //     }
-        //     else {
-        //        list[idx]=nums1[i];
-        //        idx++;
-        //         i++;
-        //         j++;
-        //     }
-        // }
-        // return list;
-        // Set<Integer> set1 = new HashSet<>();
-        // Set<Integer> resultSet = new HashSet<>();
-        
-        // for (int n : nums1) {
-        //     set1.add(n);
-        // }
-        
-        // for (int n : nums2) {
-        //     if (set1.contains(n)) {
-        //         resultSet.add(n);
-        //     }
-        // }
-        
-        // int[] result = new int[resultSet.size()];
-        // int i = 0;
-        // for (int n : resultSet) {
-        //     result[i++] = n;
-        // }
-        
-        // return result;
-         Arrays.sort(nums1);
-        Arrays.sort(nums2);
-        
-        int i = 0;
-        int j = 0;
-        
-        Set<Integer> set = new HashSet<>();
-        
-        while (i < nums1.length && j < nums2.length) {
-            
-            if (nums1[i] < nums2[j]) {
-                i++;
-            } 
-            else if (nums1[i] > nums2[j]) {
-                j++;
-            } 
-            else {
-                set.add(nums1[i]);   // HashSet avoids duplicates
-                i++;
-                j++;
-            }
+      HashSet<Integer>set1=new HashSet<>();
+      HashSet<Integer>intersectSet= new HashSet<>();
+      for(int i:nums1){
+        set1.add(i);
+      }
+      for (int num : nums2) {
+        if (set1.contains(num)) {
+            intersectSet.add(num);
         }
-        
-        // Convert Set to array
-        int[] result = new int[set.size()];
-        int idx = 0;
-        for (int num : set) {
-            result[idx++] = num;
-        }
-        
-        return result;
-
+    }
+        int[] arr = new int[intersectSet.size()];
+    int t = 0;
+    for (Integer k : intersectSet) {
+        arr[t++] = k;
+    }
+    
+    return arr;
 
     }
 }
