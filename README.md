@@ -1,4 +1,212 @@
-# 📚 Data Structures & Algorithms (DSA)
+<div align="center">
+
+# 👋 Hi, I'm Vikash Kumar
+
+### Computer Science Engineering Student | Full Stack Developer | DSA Enthusiast
+
+[![GitHub followers](https://img.shields.io/github/followers/vikashkumar016?style=social)](https://github.com/vikashkumar016)
+[![GitHub stars](https://img.shields.io/github/stars/vikashkumar016?style=social)](https://github.com/vikashkumar016)
+[![LeetCode](https://img.shields.io/badge/LeetCode-200%2B%20Solved-orange?style=flat&logo=leetcode)](https://leetcode.com/vikashkumar016)
+[![Profile Views](https://komarev.com/ghpvc/?username=vikashkumar016&color=blue)](https://github.com/vikashkumar016)
+
+</div>
+
+---
+
+## 📑 Table of Contents
+
+- [👨‍💻 Professional Summary](#-professional-summary)
+- [🎓 Education](#-education)
+- [💼 Technical Skills](#-technical-skills)
+- [🚀 Core Competencies](#-core-competencies)
+- [💡 What I'm Currently Focused On](#-what-im-currently-focused-on)
+- [🏆 Achievements & Highlights](#-achievements--highlights)
+- [📂 Featured Projects](#-featured-projects)
+- [🎯 Career Interests](#-career-interests)
+- [💼 Open to Opportunities](#-open-to-opportunities)
+- [📊 GitHub Stats](#-github-stats)
+- [📚 DSA Repository Guide](#-dsa-repository-guide)
+- [🤝 Connect With Me](#-connect-with-me)
+
+---
+
+## 👨‍💻 Professional Summary
+
+Motivated and detail-oriented **Computer Science Engineering student (CSE – AIML)** with a strong foundation in **Full Stack Web Development** and **Data Structures & Algorithms**. Experienced in building responsive and scalable web applications using modern frontend and backend technologies.
+
+Possesses a conceptual understanding of **Artificial Intelligence & Machine Learning**, including supervised learning, model training workflows, and real-world AI use cases. Actively strengthening problem-solving skills through consistent DSA practice and competitive programming.
+
+Currently expanding skill set toward **Cloud Computing** and scalable system design, with the goal of becoming a well-rounded **Software Development Engineer (SDE)**.
+
+---
+
+## 🎓 Education
+
+**Bachelor of Technology (B.Tech) – Computer Science & Engineering**
+- **Specialization:** Artificial Intelligence & Machine Learning
+- **Expected Graduation:** 2027
+
+<details>
+<summary><b>Relevant Coursework</b></summary>
+
+- Data Structures & Algorithms
+- Object-Oriented Programming
+- Database Management Systems
+- Operating Systems
+- Computer Networks
+- Artificial Intelligence & Machine Learning (Foundations)
+
+</details>
+
+---
+
+## 💼 Technical Skills
+
+### 💻 Core Programming
+- **Languages:** Java, JavaScript, Python, C, C++
+- **Problem Solving:** Strong grasp of arrays, strings, recursion, hashing, and basic algorithms
+
+### 🌐 Full Stack Development
+- **Frontend:** React.js, HTML5, CSS3, Tailwind CSS, Bootstrap
+- **Backend:** Node.js, Express.js, REST APIs
+- **Databases:** MongoDB, MySQL, PostgreSQL
+- **Authentication:** JWT, basic role-based access
+
+### 🤖 AI / ML (Foundational Understanding)
+- Python for ML workflows
+- Data preprocessing & feature handling
+- Supervised learning concepts
+- Familiar with Scikit-learn, TensorFlow (basics)
+
+### 🛠️ Tools & Platforms
+- **Version Control:** Git, GitHub
+- **Development Tools:** VS Code, Postman
+- **Operating Systems:** Linux (basic usage)
+- **Containerization:** Docker (basic exposure)
+
+### ☁️ Cloud (Learning Phase)
+- Understanding cloud fundamentals (deployment concepts, hosting, scalability)
+- Planning hands-on learning with AWS and cloud-native tools
+
+---
+
+## 🚀 Core Competencies
+
+<table>
+<tr>
+<td valign="top" width="50%">
+
+### Primary Strengths
+- ✅ Full Stack Web Development
+- ✅ Data Structures & Algorithms
+- ✅ REST API Development
+- ✅ Object-Oriented Programming
+- ✅ Debugging & Code Optimization
+
+### Conceptual Knowledge
+- 🧠 Artificial Intelligence & Machine Learning fundamentals
+- 🧠 Model training pipelines & evaluation concepts
+
+</td>
+<td valign="top" width="50%">
+
+### Currently Developing
+- 🚀 Advanced DSA problem-solving
+- 🚀 System design basics
+- 🚀 Cloud computing & deployment
+
+### Professional Skills
+- 💼 Analytical thinking
+- 💼 Consistent learner
+- 💼 Clean & readable code practices
+- 💼 Team collaboration
+
+</td>
+</tr>
+</table>
+
+---
+
+## 💡 What I'm Currently Focused On
+
+- 🔨 **Building:** Full-stack projects with clean architecture and reusable components
+- 🧠 **Practicing:** DSA daily using LeetCode, GFG, and competitive programming platforms
+- 🤖 **Understanding:** Core AI/ML concepts and how models are applied in real products
+- ☁️ **Preparing to Learn:** Cloud computing, deployment workflows, and scalable systems
+- 🌱 **Growing:** Improving code quality, GitHub profile, and project documentation
+
+---
+
+## 🏆 Achievements & Highlights
+
+- ✅ Solved **200+ DSA problems** across LeetCode, GFG, and other platforms
+- 💻 Built multiple **full-stack web applications** using React & Node.js
+- 🧠 Studied and implemented basic **ML models** for learning purposes
+- 📈 Actively improving problem-solving consistency and coding discipline
+
+---
+
+## 📂 Featured Projects
+
+### 🛒 E-Commerce Web Application (MERN)
+- Designed frontend using **React** with reusable components
+- Built **REST APIs** using Node.js & Express
+- Implemented authentication using **JWT**
+- **Focus:** Full stack flow, CRUD operations, clean UI
+
+### 📋 Task Management System
+- Full-stack application for task creation and tracking
+- Emphasis on component structure and API design
+- **Focus:** Practical full-stack development
+
+### 🤖 AI/ML Mini Projects
+- Implemented basic ML models using Python
+- Worked with datasets, preprocessing, and evaluation
+- **Focus:** Understanding ML workflow rather than heavy research
+
+---
+
+## 🎯 Career Interests
+
+<div align="center">
+
+| 💼 Software Development Engineer (SDE) | 🌐 Full Stack Web Development |
+|:---:|:---:|
+| 🧠 Data Structures & Algorithms | 🤖 AI/ML (Applied & Industry-oriented) |
+| ☁️ Cloud Computing & Scalable Systems | 🌟 Open-source collaboration |
+
+</div>
+
+---
+
+## 💼 Open to Opportunities
+
+I am actively looking for:
+
+- ✅ **SDE Internships & Entry-Level Roles**
+- ✅ **Full Stack Developer Opportunities**
+- ✅ **Project-based collaborations**
+- ✅ **Open-source contributions**
+
+📩 **Always open to learning, building, and growing with the right team.**
+
+---
+
+## 📊 GitHub Stats
+
+<div align="center">
+
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=vikashkumar016&show_icons=true&theme=radical&count_private=true)
+
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=vikashkumar016&layout=compact&theme=radical)
+
+![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=vikashkumar016&theme=radical)
+
+</div>
+
+---
+
+# 📚 DSA Repository Guide
 
 Welcome to my DSA repository! This repository contains a comprehensive collection of data structures and algorithm problems, solutions, and notes. It's meant for practice, learning, and interview preparation.
 
@@ -275,10 +483,32 @@ This repository is maintained by [@vikashkumar016](https://github.com/vikashkuma
 
 ---
 
-## 📞 Contact
+---
 
-For questions or suggestions, please open an issue or reach out via GitHub.
+## 🤝 Connect With Me
+
+<div align="center">
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/vikashkumar016)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/vikashkumar016)
+[![LeetCode](https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black)](https://leetcode.com/vikashkumar016)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:contact@vikashkumar.dev)
+[![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/vikashkumar016)
+
+</div>
 
 ---
 
-*Last Updated: January 2026*
+<div align="center">
+
+### 💭 Quote of the Day
+
+> "Talk is cheap. Show me the code." — Linus Torvalds
+
+---
+
+**⭐ From [vikashkumar016](https://github.com/vikashkumar016) | Made with ❤️**
+
+*Last Updated: February 2026*
+
+</div>
