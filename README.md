@@ -2,12 +2,47 @@
 
 Welcome to my DSA repository! This repository contains a comprehensive collection of data structures and algorithm problems, solutions, and notes. It's meant for practice, learning, and interview preparation.
 
+## 🎨 Interactive Portfolio
+
+**[View My Portfolio →](https://vikashkumar016.github.io/DSA/)** | A beautiful, interactive showcase of my DSA journey with visualizations and stats!
+
+### 📖 How to View Portfolio Locally
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/vikashkumar016/DSA.git
+   cd DSA
+   ```
+
+2. **Open the portfolio:**
+   - Simply open `index.html` in your web browser
+   - **OR** use a local server (recommended):
+     ```bash
+     # Using Python 3
+     python3 -m http.server 8000
+     
+     # Using Python 2
+     python -m SimpleHTTPServer 8000
+     
+     # Using Node.js (if you have npx)
+     npx serve
+     ```
+   - Then visit `http://localhost:8000` in your browser
+
+3. **Features:**
+   - 🎯 Dynamic quotes that change on each page refresh
+   - 📊 Interactive charts showing skills, problem distribution, and language stats
+   - 🌙 Beautiful dark theme with responsive design
+   - 📱 Mobile-friendly layout
+   - ♿ Accessible design with good contrast ratios
+
 ---
 
 ## 📂 Repository Structure
 
 ```
 DSA/
+├── index.html                   # 🎨 Interactive portfolio webpage
 ├── LeetCode/                    # Organized LeetCode solutions by difficulty
 │   ├── Easy/                   # Easy difficulty problems
 │   ├── Medium/                 # Medium difficulty problems
