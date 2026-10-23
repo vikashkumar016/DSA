@@ -32,6 +32,6 @@ class Solution {
         for(int i=0;i<newStr.length;i++){
             newStr[i]=list.get(i);
         }
-        return newStr;
+        return list.toArray(new String[0]);
     }
 }
