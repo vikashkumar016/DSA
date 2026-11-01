@@ -1,20 +1,18 @@
 class Solution {
     public int minMoves2(int[] nums) {
-        int n=nums.length;
-        Arrays.sort(nums);
-        int idx;
-        if(n%2==0){
-            idx=((n/2)-1 +n/2)/2;
+     long minMoves = Long.MAX_VALUE;
+
+        for (int target : nums) {
+
+            long moves = 0;
+
+            for (int num : nums) {
+                moves += Math.abs((long)num - target);
+            }
+
+            minMoves = Math.min(minMoves, moves);
         }
-        else {
-            idx=n/2;
-        }
-        
-        long mid=nums[idx];
-        int moves=0;
-        for(int i:nums){
-            moves+=Math.abs(i-mid);
-    }
-    return moves;
+
+        return (int) minMoves;
     }
 }
