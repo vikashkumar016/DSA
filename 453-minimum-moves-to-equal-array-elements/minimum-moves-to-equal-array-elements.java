@@ -7,15 +7,8 @@ class Solution {
         }
        }
        int count=0;
-       for(int i=0;i<nums.length;i++){
-          long num=nums[i];
-          if(num==min){
-          continue;
-          }
-          while(num!=min){
-           count+=num-min;
-           break;
-          }
+       for(int i:nums){
+        count+=i-min;
        }
        return count;
     }
