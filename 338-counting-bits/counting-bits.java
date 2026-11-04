@@ -3,13 +3,7 @@ class Solution {
         int[] arr=new int[n+1];
         arr[0]=0;
         for(int i=1;i<=n;i++){
-            int num=i;
-            int count=0;
-            while(num>0){
-                num=num&(num-1);
-                count++;
-            }
-            arr[i]=count;
+           arr[i] = arr[i >> 1] + (i & 1);
         }
         return arr;
 
