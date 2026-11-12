@@ -1,23 +1,30 @@
 class Solution {
     public int countStudents(int[] students, int[] sandwiches) {
-        int[] count = new int[2];
-
-        // count students
-        for(int s : students) {
-            count[s]++;
+        Stack<Integer>stack= new Stack<>();
+        Queue<Integer>queue= new LinkedList<>();
+        for(int i=0;i<students.length;i++){
+            queue.offer(students[i]);
         }
-
-        // process sandwiches
-        for(int sandwich : sandwiches) {
-
-            // nobody wants this sandwich
-            if(count[sandwich] == 0) {
+        for(int i = sandwiches.length - 1; i >= 0; i--){
+     stack.push(sandwiches[i]);
+    }
+        int rotation=0;
+        while(!stack.isEmpty() && !queue.isEmpty()){
+            int num=queue.poll();
+            if(stack.peek()==num){
+                stack.pop();
+                rotation=0;
+            }
+            else {
+                queue.offer(num);
+                rotation++;
+                if(rotation==queue.size()){
                 break;
             }
 
-            count[sandwich]--;
+            }
+            
         }
-
-        return count[0] + count[1];
+        return queue.size();
     }
 }
