@@ -11,7 +11,6 @@ class Solution {
                 else {
                       ans=Math.max(ans,inc);
                 inc=1;
-                continue;
                 }
             }
             else {
