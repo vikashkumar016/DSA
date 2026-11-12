@@ -5,21 +5,21 @@ class Solution {
         int ans = 1;
 
         for (int i = 1; i < nums.length; i++) {
-
             if (nums[i] > nums[i - 1]) {
                 inc++;
-                dec = 1;
-            } 
-            else if (nums[i] < nums[i - 1]) {
+            } else {
+                inc = 1;
+            }
+            ans = Math.max(ans, inc);
+        }
+
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] < nums[i - 1]) {
                 dec++;
-                inc = 1;
-            } 
-            else {
-                inc = 1;
+            } else {
                 dec = 1;
             }
-
-            ans = Math.max(ans, Math.max(inc, dec));
+            ans = Math.max(ans, dec);
         }
 
         return ans;
