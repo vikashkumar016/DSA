@@ -1,6 +1,5 @@
 class Solution {
     public int minimumLength(String s) {
-        StringBuilder sb = new StringBuilder();
         int count=0;
         int left=0;
         int right=s.length()-1;
@@ -10,10 +9,9 @@ class Solution {
             while(left<=right && s.charAt(left)==ch){
                 left++;
             }
-             while(left<=right && s.charAt(right)==ch){
+            while(left<=right &&s.charAt(right)==ch){
                 right--;
             }
-
         }
         return right-left+1;
     }
