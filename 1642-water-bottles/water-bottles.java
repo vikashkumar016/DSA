@@ -1,17 +1,13 @@
 class Solution {
     public int numWaterBottles(int numBottles, int numExchange) {
-        int count = 0;
-        int remain = 0;
-        int store;
-        while (numBottles > 0){
-            count += numBottles;
-            store = numBottles;
-            numBottles = (int) ((numBottles + remain) / numExchange);
-            remain += store - (numBottles * numExchange);
-            System.out.println(store);
-            System.out.println(numBottles);
-            System.out.println(remain);
+        int drink=numBottles;
+        int empty=drink;
+        while(empty>=numExchange){
+            int newBottle=empty/numExchange;
+            int left=empty%numExchange;
+             drink+=newBottle;
+             empty=left+newBottle;
         }
-    return count;
-}
+        return drink;
+    }
 }
